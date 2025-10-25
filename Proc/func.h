@@ -10,7 +10,9 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <dirent.h>
+#include <sys/types.h>
 #include <fcntl.h>
+#include <sys/mman.h>
 
 #define ARGS_CHECK(argc, n) {   \
     if (argc != n){             \
