@@ -1,0 +1,80 @@
+1. 文件复制程序
+使用open、read、write、close实现一个简单的文件复制程序。
+
+<C>
+// 要求：./copy source_file dest_file
+// 提示：需要处理大文件，不能一次性读取整个文件基础习题
+1. 文件复制程序
+使用open、read、write、close实现一个简单的文件复制程序。
+
+<C>
+// 要求：./copy source_file dest_file
+// 提示：需要处理大文件，不能一次性读取整个文件
+2. 文件信息查看器
+使用fstat、open、close实现类似ls -l的功能，显示文件的详细信息。
+
+<C>
+// 要求：./fileinfo filename
+// 显示：文件大小、权限、修改时间、inode号等
+中级习题
+3. 文件追加写入
+使用lseek、open、write实现向文件末尾追加内容的功能。
+
+<C>
+// 要求：./append filename content
+// 注意：处理文件不存在的情况
+4. 文件截断工具
+使用ftruncate、open实现一个可以截断文件的工具。
+
+<C>
+// 要求：./truncate filename new_size
+// 功能：将文件截断到指定大小
+5. 文件同步写入
+使用fsync实现一个确保数据写入磁盘的程序。
+
+<C>
+// 要求：./safe_write filename content
+// 功能：写入内容并确保数据持久化到磁盘
+高级习题
+6. 文件描述符重定向
+使用dup2实现标准输出重定向到文件。
+
+<C>
+// 要求：./redirect filename command
+// 功能：执行command并将其输出重定向到filename
+7. 内存映射文件操作
+使用mmap、munmap实现文件内容的快速处理。
+
+<C>
+// 要求：./mmap_process filename
+// 功能：使用内存映射方式读取文件并统计字符数
+8. 综合文件处理工具
+结合多个系统调用实现一个文件处理工具：
+
+<C>
+// 要求：./file_processor source dest operation
+// operation可以是：
+//   copy: 复制文件
+//   append: 追加内容
+//   truncate: 截断文件
+//   info: 显示文件信息
+挑战习题
+9. 文件分割与合并
+<C>
+// 分割：./split filename chunk_size
+// 合并：./merge part1 part2 part3 ... output
+// 功能：将大文件分割成小块，或将多个小块合并
+10. 简单的文本编辑器
+<C>
+// 要求：./editor filename
+// 功能：
+//   - 显示文件内容
+//   - 在指定位置插入文本
+//   - 删除指定行
+//   - 保存并退出
+实现建议
+错误处理：每个系统调用都要检查返回值
+资源管理：确保打开的文件都能正确关闭
+参数验证：验证命令行参数的有效性
+内存管理：合理分配和释放内存
+边界条件：处理文件大小、权限等各种边界情况
